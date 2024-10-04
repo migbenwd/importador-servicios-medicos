@@ -1,3 +1,4 @@
+<?php
 
 /*
 Plugin Name: Importador de JSON
@@ -10,10 +11,10 @@ Author: Tu Nombre
 function importar_publicaciones_json() {
 	
 	$ruta_plugin = dirname(__FILE__); // Obtiene la ruta de la carpeta del plugin
-    $archivo_json = $ruta_plugin . '\response-deliabarraza.json'; // Reemplaza con la ruta completa de tu archivo
+    	$archivo_json = $ruta_plugin . '\response-deliabarraza.json'; // Reemplaza con la ruta completa de tu archivo
 	$datos_json = file_get_contents($archivo_json);
-    $data_respuesta = json_decode($datos_json, true);
-    $publicaciones = $data_respuesta['data']['studies'];
+    	$data_respuesta = json_decode($datos_json, true);
+    	$publicaciones = $data_respuesta['data']['studies'];
 	
 	$total_estudios = count($publicaciones);
 
@@ -90,3 +91,5 @@ function pagina_importacion() {
     </div>
     <?php
 }
+
+?>
